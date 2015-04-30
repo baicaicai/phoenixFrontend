@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- compiled css output -->
+    <link href="common/css/ionic.app.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs controllers -->
+    <script src="common/lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- Third party plugin) -->
+    <script src="common/lib/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="https://leancloud.cn/scripts/lib/av-0.5.1.min.js"></script>
+
+    <!-- your app's entrance js files -->
+    <script src="core/app.js"></script>
+
+    <!-- your common module js files -->
+    <script src="common/constant/config.js"></script>
+
+    <!-- your core module js files -->
+    <script src="core/services/services.js"></script>
+
+    <script src="core/controllers/controllers.js"></script>
+    <script src="core/controllers/mainCtrl.js"></script>
+    <script src="core/controllers/auth/regCtrl.js"></script>
+    <script src="core/controllers/auth/loginCtrl.js"></script>
+
+
+</head>
+<body ng-app="phoenix">
+<!--
+  The nav bar that will be updated as we navigate between views.
+-->
+<ion-nav-bar class="bar-assertive" ng-controller="MainCtrl">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-compose" ng-click="testFunction()"></button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+<!--
+  The views will be rendered in the <ion-nav-view> directive below
+  Templates are in the /views folder (but you could also
+  have views inline in this html file if you'd like).
+-->
+<ion-nav-view></ion-nav-view>
+</body>
+</html>

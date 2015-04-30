@@ -1,0 +1,11 @@
+{
+  "name": "phoenix-frontend",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.5"
+  },
+  "dependencies": {
+    "angular-local-storage": "~0.1.5",
+    "avoscloud-sdk": "~0.5.1"
+  }
+}
