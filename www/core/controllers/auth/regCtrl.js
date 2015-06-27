@@ -3,7 +3,7 @@
  */
 
 
-app.controller('RegCtrl', ['$scope', function ($scope) {
+coreCtrl.controller('RegCtrl', ['$scope', function ($scope) {
 
 	$scope.user = {
 		username:"",

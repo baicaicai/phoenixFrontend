@@ -6,7 +6,7 @@
  */
 
 
-app.controller('LoginCtrl', ['$scope', function ($scope) {
+coreCtrl.controller('LoginCtrl', ['$scope', function ($scope) {
 
 	$scope.user = {
 		username:"",
@@ -17,7 +17,7 @@ app.controller('LoginCtrl', ['$scope', function ($scope) {
 
 		AV.User.logIn($scope.user.username, $scope.user.password, {
 			success: function(user) {
-				console.log('³É¹¦µÇÈë');
+				console.log('ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½');
 				// Do stuff after successful login.
 			},
 			error: function(user, error) {

@@ -10,7 +10,7 @@
 var app = angular.module('phoenix', [
 	'ionic',
 	'config',
-	'starter.controllers',
+	'coreCtrl',
 	'starter.services',
 	'LocalStorageModule'
 	]);
@@ -27,16 +27,14 @@ app.run(function ($ionicPlatform,localStorageService,$state,configServ) {
 			// org.apache.cordova.statusbar required
 			StatusBar.styleLightContent();
 		}
-		console.log(configServ);
-		//≥ı ºªØAV
-		AV.initialize(configServ.avKey.appId, configServ.avKey.appKey);
 
+		AV.initialize(configServ.avKey.appId, configServ.avKey.appKey);
 		//check the auth status
 		var currentUser = AV.User.current();
 		if(currentUser){
-			$state.go('tabs.dash');
+			$state.go('tabs.account');
 		}else{
-			$state.go('login');
+			$state.go('welcome');
 		}
 
 	});
@@ -90,6 +88,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 						controller: 'AccountCtrl'
 					}
 				}
+			})
+			.state('welcome',{
+				url:'/welcome',
+				templateUrl:'core/views/auth/welcome.html',
+				controller:'WelcomeCtrl'
 			})
 			.state('login', {
 				url: '/login',

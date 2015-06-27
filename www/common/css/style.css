@@ -1,0 +1,11 @@
+.welcomePage {
+    background-repeat: no-repeat;
+    background-image: url("../img/welcome.png");
+    background-size: cover;
+    background-position: center;
+    display: block;
+}
+
+.welcomePage .loginWindow{
+    align-self: flex-end;
+}
