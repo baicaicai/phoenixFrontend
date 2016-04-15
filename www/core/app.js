@@ -9,9 +9,9 @@
 // 'starter.controllers' is found in controllers.controllers
 var app = angular.module('phoenix', [
 	'ionic',
-	'config',
-	'coreCtrl',
-	'starter.services',
+	'phoenix.config',
+	'phoenix.controllers',
+	'phoenix.services',
 	'LocalStorageModule'
 	]);
 
@@ -32,7 +32,13 @@ app.run(function ($ionicPlatform,localStorageService,$state,configServ) {
 		//check the auth status
 		var currentUser = AV.User.current();
 		if(currentUser){
-			$state.go('tabs.account');
+                if (!currentUser.configStatus){
+                    $state.go('tab.account');
+                    console.log('plz complet config');
+                }
+                else{
+                    $state.go('tab.dash');
+                }
 		}else{
 			$state.go('welcome');
 		}
@@ -50,7 +56,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			.state('tab', {
 				url: "/tab",
 				abstract: true,
-				controller:'MainCtrl',
+				controller:'TabCtrl',
 				templateUrl: "core/views/main/tabs.html"
 			})
 			.state('tab.dash', {
@@ -88,21 +94,31 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 						controller: 'AccountCtrl'
 					}
 				}
-			})
+			})        
+			.state('tab.account-credential', {
+				url: '/credential',
+				views: {
+					'tab-account': {
+						templateUrl: 'core/views/config/credential.html',
+						controller: 'ConfigCtrl'
+					}
+				}
+			})                
+        // auth related 
 			.state('welcome',{
 				url:'/welcome',
 				templateUrl:'core/views/auth/welcome.html',
-				controller:'WelcomeCtrl'
+				controller:'AuthCtrl'
 			})
 			.state('login', {
 				url: '/login',
 				templateUrl: 'core/views/auth/login.html',
-				controller: 'LoginCtrl'
+				controller: 'AuthCtrl'
 			})
 			.state('register', {
 				url: '/register',
-				templateUrl: 'core/views/auth/register.html',
-				controller: 'RegCtrl'
+				templateUrl: 'core/views/auth/mobileLogin.html',
+				controller: 'AuthCtrl'
 			});
 
 		// if none of the above states are matched, use this as the fallback

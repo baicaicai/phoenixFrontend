@@ -6,38 +6,32 @@
     <title></title>
 
     <!-- compiled css output -->
-    <link href="common/css/ionic.app.css" rel="stylesheet">
-    <link href="common/css/style.css" rel="stylesheet">
+    <link href="./common/css/ionic.app.min.css" rel="stylesheet">
 
     <!-- ionic/angularjs controllers -->
-    <script src="common/lib/ionic/js/ionic.bundle.js"></script>
+    <script src="./common/lib/ionic/release/js/ionic.bundle.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- Third party plugin) -->
-    <script src="common/lib/angular-local-storage/dist/angular-local-storage.js"></script>
-    <script src="https://leancloud.cn/scripts/lib/av-0.5.1.min.js"></script>
+    <script src="./common/lib/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="https://cdn1.lncld.net/static/js/av-mini-0.6.4.js"></script>
 
     <!-- your apps entrance js files -->
     <script src="core/app.js"></script>
 
     <!-- your common module js files -->
-    <script src="common/constant/config.js"></script>
+    <script src="./common/constant/config.js"></script>
 
     <!-- your core module js files -->
-    <script src="core/services/services.js"></script>
-
-    <script src="core/controllers/controllers.js"></script>
-    <script src="core/controllers/mainCtrl.js"></script>
-
-
-    <!-- your core module js files -->
-    <script src="core/controllers/auth/welcomeCtrl.js"></script>
-    <script src="core/controllers/auth/regCtrl.js"></script>
-    <script src="core/controllers/auth/loginCtrl.js"></script>
-
-
+    <script src="./core/services/services.js"></script>
+    <script src="./core/services/authServ.js"></script>
+    <script src="./core/controllers/controllers.js"></script>
+    <!-- your Auth module js files -->
+    <script src="./core/controllers/auth/authCtrl.js"></script>
+    <!-- your Config module js files -->
+    <script src="./core/controllers/config/configCtrl.js"></script>
 </head>
 <body ng-app="phoenix">
 <!--

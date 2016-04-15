@@ -2,7 +2,7 @@
  * Created by chaojie.cai on 4/30/2015.
  */
 
-angular.module('config',[]).service('configServ',[function(){
+angular.module('phoenix.config',[]).service('configServ',[function(){
 
 	var avKey = {
 		appId:"f7raj414xcmmh9dqvwgg1u6frclogxz1m1ih6xsat9y5tu6e",

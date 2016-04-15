@@ -1,0 +1,41 @@
+<ion-view view-title="Mobile Login">
+    <ion-header-bar align-title="center" class="bar-assertive">      
+        <a class="button icon-left ion-chevron-left button-clear button-light" href="#/welcome"></a>
+        <h1 class="title">Mobile Login</h1>
+    </ion-header-bar> 
+    <ion-content padding="true" scroll="false" class="has-header">
+        
+        <div class="list">
+            <label class="item item-input">
+                <i class="icon ion-iphone placeholder-icon"></i>
+                <input type="text" placeholder="Plese enter your Mobile" ng-model="inputs.phone">
+            </label>
+            
+            <div class="item item-input-inset row">
+                <label class="item-input-wrapper col col-70">
+                    <input type="text" placeholder="Please Enter the Verify code" ng-model="inputs.verifyCode">
+                </label>
+                <button class="button button-small" ng-click="getVerifyCode()">Get Verify Code</button>
+            </div>
+            <div class="item item-input-inset">
+                <button class="button button-assertive button-medium button-block" ng-click="signUpOrlogInWithMobilePhone()">Login</button>
+            </div>
+        </div>
+        
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                <span class="input-label" >Mobile</span>
+                <input type="text" placeholder="" ng-model="inputs.username">
+                </label>
+                <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="text" placeholder="" ng-model="inputs.password">
+                </label>
+            </ion-list>
+            <button class="button button-stable button-block" ng-click="login()">Log In</button>
+            <button class="button button-stable button-block" ng-click="registerUser()">Sign up</button>
+        </form>
+        
+    </ion-content>
+</ion-view>

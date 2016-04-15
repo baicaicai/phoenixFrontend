@@ -1,7 +1,19 @@
-<ion-view title="登陆">
-    <ion-content padding="true" scroll="false" class="welcomePage">
-        <div class="row row-bottom loginWindow">
-            <p>Hello world</p>
-        </div>
-    </ion-content>
+<ion-view class="walkthrough-view" cache-view="false">
+  <ion-content scroll="false">
+    <div class="top-content row">
+      <div class="col col-center">
+        <img ng-src="img/arrow-icon-2.png">
+      </div>
+    </div>
+    <div class="bottom-content row">
+      <div class="col col-center">
+        <a class="login button button-block button-stable" ui-sref="login">
+          Wechat Login
+        </a>
+        <a class="sign-up button button-block button-stable" ui-sref="register">
+          Mobile Login
+        </a>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

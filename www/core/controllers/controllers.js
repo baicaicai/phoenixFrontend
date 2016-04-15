@@ -1,21 +1,34 @@
-var coreCtrl = angular.module('coreCtrl', []);
+"use strict";
 
-coreCtrl.controller('DashCtrl', function ($scope) {
+var ctrlModule = angular.module('phoenix.controllers', []);
+
+ctrlModule.controller('TabCtrl', function($scope){
+    
 })
 
-coreCtrl.controller('ChatsCtrl', function ($scope, Chats) {
+ctrlModule.controller('DashCtrl', function($scope) {
+})
+
+ctrlModule.controller('ChatsCtrl', function($scope, Chats) {
 	$scope.chats = Chats.all();
 	$scope.remove = function (chat) {
 		Chats.remove(chat);
 	}
 })
 
-coreCtrl.controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
+ctrlModule.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
 	$scope.chat = Chats.get($stateParams.chatId);
 })
 
-coreCtrl.controller('AccountCtrl', function ($scope) {
+ctrlModule.controller('AccountCtrl', function($scope) {
 	$scope.settings = {
 		enableFriends: true
 	};
 });
+
+ctrlModule.controller('MainCtrl', ['$scope', function($scope) {
+	$scope.testFunction = function(){
+		console.log('hello world');
+	};
+}
+]);
