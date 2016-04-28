@@ -28,6 +28,7 @@
 @import "scss/settings/settings.variables";
 
 // Include custom styles
+
 @import "scss/common/common.styles";
 @import "scss/auth/auth.styles";
 @import "scss/auth/walkthrough.styles";
@@ -56,3 +57,8 @@
 
 @import "scss/forms/forms.styles";
 @import "scss/settings/settings.styles";
+
+
+//scss for dash
+
+@import "scss/main/main.styles";

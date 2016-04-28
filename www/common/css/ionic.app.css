@@ -9724,6 +9724,9 @@ a.button {
 * {
   color: #444444; }
 
+.centerText {
+  text-align: center; }
+
 .bar.app-top-bar {
   background-color: #FF4C4C; }
   .bar.app-top-bar .title {
